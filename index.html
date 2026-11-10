@@ -191,6 +191,8 @@ input[type=range]{width:100%;accent-color:var(--lime);margin-top:10px}
 .centers{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .center{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--card);text-align:left}
 .center img{width:100%;height:120px;object-fit:cover}
+.center .noimg{display:grid;place-items:center;height:120px;background:radial-gradient(ellipse at center,#2a2f7a 0,#141a3a 60%,#0e1529 100%)}
+.center .noimg img{width:110px;height:auto;border-radius:8px;opacity:.9}
 .center div{padding:12px 14px 14px;display:flex;gap:10px}
 .center div:before{content:"";width:16px;height:16px;border-radius:50%;border:2px solid #4a5574;flex:none;margin-top:2px}
 .center.on{border-color:var(--lime);box-shadow:0 0 0 1px var(--lime) inset}
@@ -349,7 +351,8 @@ input[type=range]{width:100%;accent-color:var(--lime);margin-top:10px}
   .colors{grid-template-columns:repeat(2,1fr)}
   .worlds,.centers{grid-template-columns:1fr 1fr}
   .world img{height:110px}
-  .center img{height:90px}
+  .center img,.center .noimg{height:90px}
+  .center .noimg img{height:auto;width:90px}
   .navrow .btn{flex:1}
   .map{left:12px;right:12px;width:auto}
   .mapbtn{padding:7px 12px;font-size:12px;right:12px;bottom:12px;opacity:.85}
@@ -407,7 +410,8 @@ const CENTERS = [
   {id:"gag", name:"Гагаринский", addr:"Москва, ул. Вавилова, 3 · ТРЦ «Гагаринский», 3 этаж", img:IMG.gag},
   {id:"kun", name:"Кунцево", addr:"МО, Немчиновка, Хорошёвский проезд, 14 · ТРК Vegas Кунцево, 3 этаж", img:IMG.kun},
   {id:"myak", name:"Мякинино", addr:"МО, Красногорск, ул. Международная", img:IMG.myak},
-  {id:"beg", name:"Беговая", addr:"Москва, Хорошёвское шоссе, 16, стр. 3", img:IMG.beg}
+  {id:"beg", name:"Беговая", addr:"Москва, Хорошёвское шоссе, 16, стр. 3", img:IMG.beg},
+  {id:"kash", name:"Каширская", addr:"Москва, МКАД, 24-й км, 1 · ТРК VEGAS Каширское", img:""}
 ];
 const ANSWERS = [
   {t:"Вперёд, к маяку!", d:"Окажусь в центре событий.", guide:"Смело! Летим прямо к свету, по дороге осмотримся. Запомнил твой подход.", story:"Прямо к цели"},
@@ -729,8 +733,8 @@ V.s5 = () => wizard("Герои собраны! Хочешь выбрать, г�
    ${S.saveErr?`<div class="alert"><b>Игра не сохранилась</b>Похоже, пропала связь. Нажми «Создать игру» ещё раз: всё, что ты придумал, на месте, и дубликата не будет. Если не получится, позови администратора центра.</div>`:""}
    <div class="field"><label>Центр LaserLand</label>
    <button class="opt ${S.center===null?"on":""}" data-center="" style="padding:16px 20px"><span class="dot"></span><h3 style="font-size:16px;margin:0">Решу позже</h3><p>Создам игру без привязки к месту</p></button>
-   <div class="centers">${CENTERS.map(c=>`<button class="center ${S.center===c.id?"on":""}" data-center="${c.id}"><img src="${c.img}" alt=""><div><span><b>${c.name}</b><small>${c.addr}</small></span></div></button>`).join("")}</div>
-   <p class="demo-note">В прототипе 4 центра из 6. Арену внутри центра можно выбрать по желанию.</p></div>
+   <div class="centers">${CENTERS.map(c=>`<button class="center ${S.center===c.id?"on":""}" data-center="${c.id}">${c.img?`<img src="${c.img}" alt="">`:`<span class="noimg"><img src="${IMG.logo}" alt=""></span>`}<div><span><b>${c.name}</b><small>${c.addr}</small></span></div></button>`).join("")}</div>
+   <p class="demo-note">Арену внутри центра можно выбрать по желанию.</p></div>
    <div class="navrow"><button class="btn ghost" data-go="${isAdv()?"a4":"s4"}">← Назад</button><button class="btn" id="create">Создать игру и получить код <span class="arrow">→</span></button></div>`);
 
 V.saving = () => `<div class="codepg" style="text-align:center;padding-top:120px"><div class="spinner"></div><h2 class="h-m">Сохраняем твою игру…</h2><p class="muted" style="margin-top:10px">Это пара секунд.</p></div>`;
