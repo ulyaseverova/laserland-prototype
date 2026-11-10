@@ -218,6 +218,7 @@ input[type=range]{width:100%;accent-color:var(--lime);margin-top:10px}
 .hero .codeline button{color:var(--text);text-decoration:underline;text-underline-offset:3px}
 
 /* QR sign */
+.qrwrap>div{display:flex;flex-direction:column;align-items:center;width:100%}
 .qrwrap{min-height:calc(100vh - 73px);display:grid;place-items:center;padding:40px 24px;background:radial-gradient(ellipse at center,#16203a 0,#0b0f19 70%)}
 .sign{width:min(420px,100%);background:#f4f6fa;color:#0b0f19;border-radius:22px;padding:30px 30px 26px;box-shadow:0 30px 80px rgba(0,0,0,.5);text-align:center;position:relative}
 .sign .lg{height:46px;margin:0 auto 18px;border-radius:6px}
@@ -306,6 +307,15 @@ input[type=range]{width:100%;accent-color:var(--lime);margin-top:10px}
 .map label{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#c9d0de;margin-top:12px;line-height:1.4}
 .map label input{accent-color:var(--lime);margin-top:3px}
 
+@media (max-height:820px) and (min-width:921px){
+  .qrwrap{padding:24px}
+  .sign{padding:20px 26px 18px;width:min(380px,100%)}
+  .sign .lg{height:36px;margin-bottom:10px}
+  .sign h2{font-size:24px}
+  .sign .qr{width:140px;height:140px;margin:14px auto 10px;padding:6px}
+  .ctx{margin-top:16px}
+  .ctx .btn{margin-top:10px}
+}
 @media (max-width:1180px){
   .cols{grid-template-columns:150px minmax(0,1fr) 340px;gap:28px}
   .side img{width:120px}
