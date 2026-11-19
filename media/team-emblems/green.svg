@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Изумрудная кобра">
+ <defs><linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ccff8a"/><stop offset=".4" stop-color="#49e99b"/><stop offset="1" stop-color="#119881"/></linearGradient><linearGradient id="mark" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ccff8a"/><stop offset=".42" stop-color="#49e99b"/><stop offset="1" stop-color="#119881"/></linearGradient><radialGradient id="field"><stop stop-color="#119881" stop-opacity=".5"/><stop offset="1" stop-color="#0a1730"/></radialGradient></defs>
+ <path d="M128 8 225 49 232 142c-10 47-60 84-104 106C84 226 34 189 24 142l7-93Z" fill="#060f21" stroke="#050c18" stroke-width="10" stroke-linejoin="round"/>
+ <path d="M128 13 219 53 226 141c-10 41-55 78-98 101-43-23-88-60-98-101l7-88Z" fill="url(#field)" stroke="url(#rim)" stroke-width="7" stroke-linejoin="round"/>
+ <path d="m47 73 81-36 81 36m-167 91 28 34m144-34-28 34" fill="none" stroke="#49e99b" stroke-opacity=".38" stroke-width="2"/>
+ <circle cx="128" cy="124" r="66" fill="none" stroke="#ccff8a" stroke-opacity=".12" stroke-width="2"/>
+ <g fill="url(#mark)" stroke="#071b31" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M79 183C43 153 48 111 71 91L94 56l34 12 34-12 23 35c24 21 29 61-7 92l-31-35-19 15-18-15Z"/>
+  <path d="M94 76h68l-15 48-19 27-20-27Z" fill="#b8ff91" stroke-width="6"/>
+  <path d="m102 98 20 7-10 14Zm52 0-20 7 10 14Z" fill="#06263a" stroke-width="3"/>
+  <path d="M117 146c-39 18-45 59 10 58 49-1 33-35 9-27-11 4-17 13-6 18" fill="none" stroke="#082d38" stroke-width="24"/>
+  <path d="M117 146c-39 18-45 59 10 58 49-1 33-35 9-27-11 4-17 13-6 18" fill="none" stroke="#5bea9b" stroke-width="13"/>
+  <path d="m77 109 17 25m-25-3 20 19m90-41-17 25m25-3-20 19" fill="none" stroke="#caff9f" stroke-width="5"/>
+  <path d="m122 125 6 7 6-7" fill="none" stroke="#08605b" stroke-width="4"/>
+ </g>
+ <path d="m107 224 21-9 21 9-21 12Z" fill="#49e99b"/>
+ <path d="m116 222 12-5 12 5-12 7Z" fill="#ccff8a"/>
+ </svg>
